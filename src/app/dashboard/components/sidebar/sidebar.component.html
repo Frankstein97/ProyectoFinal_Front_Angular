@@ -1,0 +1,28 @@
+    <div >
+        <img class="logo-image" src="../../assets/img/logo.png">
+        <p class="logo-p">
+          {{ fullName$ | async }}
+          <br />
+          {{ email$ | async }}
+        </p>
+      </div>
+
+     <mat-nav-list>
+        <mat-list-item routerLink="home" routerLinkActive #homeLink="routerLinkActive" [activated]="homeLink.isActive">
+            <a>Inicio</a>
+        </mat-list-item>
+        <mat-list-item routerLink="users" routerLinkActive #usuariosLink="routerLinkActive" [activated]="usuariosLink.isActive">
+            <a>Usuarios</a>
+        </mat-list-item>
+
+        <mat-list-item routerLink="courses" routerLinkActive #coursesLink="routerLinkActive" [activated]="coursesLink.isActive">
+            <a>Cursos</a>
+        </mat-list-item>
+        <mat-list-item routerLink="enrollments" routerLinkActive #enrollmentsLink="routerLinkActive" [activated]="enrollmentsLink.isActive">
+            <a>Inscripciones</a>
+        </mat-list-item>
+
+        <mat-list-item (click)="logout()">
+            <a>Cerrar Sesión</a>
+        </mat-list-item>
+     </mat-nav-list>
